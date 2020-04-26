@@ -7,12 +7,13 @@ use Livewire\Component;
 
 class ContactIndex extends Component
 {
-    public $data, $name, $phone, $selectedId;
+    public $data;
+    public $selectedId;
     public $updateStatus = false;
 
     public function render()
     {
-        $this->data = Contact::all();
+        $this->data = Contact::latest()->get();
         return view('livewire.contact.contact-index');
     }
 }

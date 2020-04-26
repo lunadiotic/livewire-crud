@@ -1,4 +1,12 @@
 <div>
+    @if ($updateStatus)
+        <livewire:contact-update></livewire:contact-update>
+    @else
+        <livewire:contact-create></livewire:contact-create>
+    @endif
+
+    <hr>
+
     <table class="table">
         <thead class="thead-dark">
             <tr>
