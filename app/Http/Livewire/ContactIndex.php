@@ -14,8 +14,8 @@ class ContactIndex extends Component
     public $updateStatus = false;
 
     protected $listeners = [
-        'contactUpdated' => '$refresh',
-        'contactStored' => '$refresh'
+        'contactUpdated',
+        'contactStored'
     ];
 
     public function render()
@@ -37,6 +37,17 @@ class ContactIndex extends Component
         if ($id) {
             $data = Contact::find($id);
             $data->delete();
+            session()->flash('message', 'Your contact was deleted');
         }
+    }
+
+    public function contactStored()
+    {
+        session()->flash('message', 'Your contact was stored');
+    }
+
+    public function contactUpdated()
+    {
+        session()->flash('message', 'Your contact was updated');
     }
 }

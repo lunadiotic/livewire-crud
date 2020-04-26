@@ -1,4 +1,10 @@
 <div>
+    @if (session()->has('message'))
+        <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
+    @endif
+
     @if ($updateStatus)
         <livewire:contact-update></livewire:contact-update>
     @else
