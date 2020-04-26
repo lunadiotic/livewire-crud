@@ -18,7 +18,7 @@
         </thead>
         <tbody>
             <?php $no = 0 ?>
-            @foreach ($data as $contact)
+            @foreach ($contacts as $contact)
             <?php $no++ ?>
             <tr>
                 <th scope="row">{{ $no }}</th>
@@ -32,4 +32,5 @@
             @endforeach
         </tbody>
     </table>
+    {{ $contacts->links() }}
 </div>
