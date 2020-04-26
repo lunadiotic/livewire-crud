@@ -10,15 +10,15 @@ class ContactCreate extends Component
     public $name;
     public $phone;
 
-    public function render()
-    {
-        return view('livewire.contact.contact-create');
-    }
-
     private function resetInput()
     {
         $this->name = null;
         $this->phone = null;
+    }
+
+    public function render()
+    {
+        return view('livewire.contact.contact-create');
     }
 
     public function store()
@@ -33,6 +33,8 @@ class ContactCreate extends Component
             'phone' => $this->phone
         ]);
 
-        // $this->resetInput();
+        $this->resetInput();
+
+        $this->emit('contactStored');
     }
 }

@@ -1,5 +1,5 @@
 <div>
-    <form>
+    <form wire:submit.prevent="store">
         <div class="form-group">
             <div class="form-row">
                 <div class="col">
@@ -20,6 +20,6 @@
                 </div>
             </div>
         </div>
-        <button wire:click="store()" class="btn btn-sm btn-primary">Submit</button>
+        <button type="submit" class="btn btn-sm btn-primary">Submit</button>
     </form>
 </div>

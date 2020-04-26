@@ -25,7 +25,7 @@
                 <td>{{ $contact->name }}</td>
                 <td>{{ $contact->phone }}</td>
                 <td>
-                    <button class="btn btn-sm btn-info text-white">Edit</button>
+                    <button wire:click="getContact({{ $contact->id }})" class="btn btn-sm btn-info text-white">Edit</button>
                     <button class="btn btn-sm btn-danger">Delete</button>
                 </td>
             </tr>
