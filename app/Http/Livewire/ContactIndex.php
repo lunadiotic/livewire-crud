@@ -29,8 +29,11 @@ class ContactIndex extends Component
         $this->emit('getContact', $this->selectedContact);
     }
 
-    // public function contactUpdated($data)
-    // {
-    //     // $this->updateStatus = false;
-    // }
+    public function destroy($id)
+    {
+        if ($id) {
+            $data = Contact::find($id);
+            $data->delete();
+        }
+    }
 }
