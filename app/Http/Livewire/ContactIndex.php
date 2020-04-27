@@ -19,7 +19,6 @@ class ContactIndex extends Component
     protected $listeners = [
         'contactUpdated',
         'contactStored',
-        'paginateData'
     ];
 
     protected $updatesQueryString = [
@@ -60,10 +59,5 @@ class ContactIndex extends Component
     public function contactUpdated()
     {
         session()->flash('message', 'Your contact was updated');
-    }
-
-    public function paginateData($data)
-    {
-        $this->paginate = $data;
     }
 }
